@@ -1,0 +1,57 @@
+<div class="widgets">
+    <div ba-panel ba-panel-title="设备规则管理" ba-panel-class="with-scroll">
+        <div style="position: absolute;top: 5px;    right: 3%;"><button type="button" ng-click="myopen('app/pages/rules/newrules/newrules.html', 'lg')" class="btn btn-info btn-raised">新增规则</button></div>
+        <form class="row form-inline ng-pristine ng-valid ng-scope">
+            <div class="col-lg-6 col-sm-6">
+                <div class="col-sm-6 text-left"><label>
+                         <select style="height: 30px;font-weight: 300;" class="form-control"  selectpicker ng-model="limit"  ng-change="search_data()"  ng-options="i for i in [5,10,20,50,100]">
+                        </select>
+                    </label> /条（每页）</div>
+            </div>
+            <div class="col-lg-6 col-sm-6">
+                <button style="position: absolute;right: 6%;" type="submit " class="btn btn-primary" ng-click="search_data()">搜索</button>
+                <div class="form-group  col-sm-2 col-xs-5"></div>
+                <div class="form-group  col-sm-8 col-xs-5">
+                    <input type="text" class="form-control" id="exampleInputName2" ng-model="list_data_opt.name" placeholder="请输入活动名称">
+                </div>
+            </div>
+            <!-- 日期选择 -->
+
+        </form>
+        <table class="table table-bordered ">
+            <thead>
+                <tr valign="middle  text-center">
+                    <th class="browser-icons "></th>
+                    <th class="text-center ">设备编号</th>
+                    <th class=" text-center">设备名称</th>
+                    <th class=" text-center">比较符</th>
+                    <th class=" text-center">预警阀值</th>
+                    <th class=" text-center">绑定摄像头</th>
+                    <th class=" text-center">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list_datas ">
+                    <td class=" text-center ">{{item.num}}</td>
+                    <td class=" text-center ">{{item.id_num}}</td>
+                    <td class=" text-center">
+                        {{item.name}}
+                    </td>
+                    <td class=" text-center">{{item.type}}</td>
+                    <td class=" text-center ">{{item.nums}}</td>
+                    <td class=" text-center ">{{item.index}}</td>
+                    <td class=" text-center row">
+                        <span class="iscursor" ng-click="myopen('app/pages/rules/newrules/newrules.html', 'lg')">编辑</span>
+                        <span class="iscursor" ng-click="que_dekete(item.id,'3')">删除</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center row" style="padding: 20px; ">
+            <div class="col-sm-6 text-right">
+                <ul style=" margin: 0; " uib-pagination total-items="bigTotalItems" previous-text="上一页 " next-text="下一页 " first-text="首页 " last-text="尾页 " ng-model="page" ng-change="pageChanged(page) " max-size="maxSize " class="pagination-sm" boundary-links="true" num-pages="numPages"
+                    items-per-page="limit"></ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="modal-content">
+    </br>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="myopenNE.opt_close()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h3 class="modal-title text-center">
+            <samll>设置摄像头区域</samll>
+        </h3>
+    </div>
+    <form class="row form-inline ng-pristine ng-valid ng-scope">
+        <div class="col-lg-6 col-sm-6">
+            <button style="position: absolute;right: 6%;" type="submit " class="btn btn-primary" ng-click="search_data()">搜索</button>
+            <div class="form-group  col-sm-2 col-xs-5"></div>
+            <div class="form-group  col-sm-8 col-xs-5">
+                <input type="text" class="form-control" id="exampleInputName2" ng-model="list_data_opt.name" placeholder="">
+            </div>
+        </div>
+    </form>
+    <div class="modal-header" style=" color: #7d7b7b;">
+        <table class="table table-bordered ">
+            <thead>
+                <tr valign="middle text-center">
+                    <th class="browser-icons "></th>
+                    <th class=" text-center">设备编号</th>
+                    <th class=" text-center">设备名称</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list_datas ">
+                    <td class=" text-center ">
+                        <input ng-checked="all" type="checkbox" ng-click="upduser(item.id)">
+                    </td>
+                    <td class=" text-center">
+                        {{item.name}}
+                    </td>
+                    <td class=" text-center ">{{item.index}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="button-wrapper ng-scope">
+            <span class="btn btn-default btn-raised" ng-click="myopenNE.opt_close()">取消</span>
+            <span class="btn btn-info btn-raised" ng-click="">保存</span>
+        </div>
+    </div>
+</div>

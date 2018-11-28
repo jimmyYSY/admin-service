@@ -1,0 +1,63 @@
+<div class="modal-content" ng-controller="newrulesCtrl">
+
+    </br>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="myopen.opt_close()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h3 class="modal-title text-center">
+            <samll>新增规则</samll>
+        </h3>
+    </div>
+
+    <form class="form-horizontal ng-pristine ng-valid ng-scope">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">设备位置</label>
+
+            <div class="col-sm-9">
+
+                <label for="inputEmail3" class="col-sm-2 control-label">研究中心</label>
+
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">传感设备名称</label>
+            <div class="col-sm-9">
+                <label for="inputEmail3" class="col-sm-2 control-label">温度传感器1（W001）</label>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">选择摄像头</label>
+            <div class="col-sm-9" ng-click="myopenNE('app/pages/Camera/ZoneSetting/Relation.html', 'md')">
+                <label for="inputEmail3" class="col-sm-2 control-label">添加摄像头</label>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">选择比较符</label>
+            <div class="col-sm-9">
+
+                <select style="height: 30px;font-weight: 300;" class="form-control" selectpicker ng-model="index" ng-options="i for i in indexs">
+                </select>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">设置阀值*</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputEmail3" placeholder="设置阀值" maxlength="150" ng-model="red_data.name">
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+    </form>
+    <div class="row">
+        <div class="button-wrapper ng-scope">
+            <span class="btn btn-default btn-raised" ng-click="myopen.opt_close()">取消</span>
+            <span class="btn btn-info btn-raised" ng-click="">保存</span>
+        </div>
+    </div>
+    </br>
+</div>

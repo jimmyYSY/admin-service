@@ -1,0 +1,65 @@
+<div class="modal-content" ng-controller="newBasicSettingsCtrl">
+
+    </br>
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="myopen.opt_close()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h3 class="modal-title text-center">
+            <samll>添加位置电子地图</samll>
+        </h3>
+    </div>
+
+
+    <form class="form-horizontal ng-pristine ng-valid ng-scope">
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">设备位置</label>
+            <div class="col-sm-9">
+                <select style="height: 30px;font-weight: 300;" class="form-control" selectpicker ng-model="index" ng-options="i for i in indexs">
+                </select>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">上传电子地图</label>
+            <div class="col-sm-9">
+                <input class="add_imgs" type="file" name="_f" id="_f" onchange="angular.element(this).scope().upload(this.files)" accept="image/gif, image/jpeg" />
+                <!--<button type="button" class="btn btn-default btn-mm">上传电子地图</button>-->
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">设备类型</label>
+            <div class="col-sm-6">
+                <select ng-repeat="inf in $scope.infor" style="height: 30px;font-weight: 300;" class="form-control" selectpicker ng-model="type" ng-options="i for i in inf.alias">
+                </select>
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">设备ID</label>
+            <div class="col-sm-6">
+                <select style="height: 30px;font-weight: 300;" class="form-control" selectpicker ng-model="ID" ng-options="i for i in IDs">
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" ng-click="add(type,index,ID)" class="btn btn-default btn-mm">在图片上添加设备</button>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" ng-click="delete()" class="btn btn-default btn-mm">删除</button>
+            </div>
+        </div>
+        <div class="form-group" style="margin-left: 0;margin-right: 0">
+            <div class="col-sm-12" id="Odiv" style="padding-left:0;padding-right: 0 ">
+                <img id="img_src" src="{{img_src}}" alt="" ng-if="img_src" style="width: 100%;">
+            </div>
+        </div>
+        <div class="row">&nbsp;</div>
+    </form>
+    <div class="row">
+        <div class="button-wrapper ng-scope">
+            <span class="btn btn-default btn-raised" ng-click="myopen.opt_close()">取消</span>
+            <span class="btn btn-info btn-raised" ng-click="saveMap()">保存</span>
+        </div>
+    </div>
+</div>

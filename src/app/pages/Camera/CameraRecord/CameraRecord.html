@@ -1,0 +1,69 @@
+<div class="modal-content" ng-controller="CameraRecordCtrl">
+
+    </br>
+    <div class="modal-header">
+        </br>
+
+        <button type="button" class="close" ng-click="myopen.opt_close()" aria-label="Close">
+            <em class="ion-ios-close-empty sn-link-close"></em>
+        </button>
+        <h3 class="modal-title text-center">
+            <samll>摄像头数据记录</samll>
+        </h3>
+    </div>
+    <form class="row form-inline ng-pristine ng-valid ng-scope">
+
+        <div class="col-lg-6 col-sm-6">
+            <div class="col-sm-12 text-left"><label>
+                         <select style="height: 30px;font-weight: 300;" class="form-control"  selectpicker ng-model="limit"  ng-change="search_data()"  ng-options="i for i in [5,10,20,50,100]">
+                        </select>
+                    </label> /条（每页）
+            </div>
+
+        </div>
+        <div class="col-lg-6 col-sm-6">
+            <button style="position: absolute;right: 6%;" type="submit " class="btn btn-primary" ng-click="search_data()">搜索</button>
+            <div class="form-group  col-sm-2 col-xs-5"></div>
+            <div class="form-group  col-sm-8 col-xs-5">
+                <input type="text" class="form-control" id="exampleInputName2" ng-model="list_data_opt.name" placeholder="">
+            </div>
+        </div>
+        <!-- 日期选择 -->
+
+    </form>
+    <div class="modal-header" style=" color: #7d7b7b;">
+        <table class="table table-bordered ">
+            <thead>
+                <tr valign="middle text-center">
+                    <th class="browser-icons "></th>
+                    <th class=" text-center">摄像头名称</th>
+                    <th class=" text-center">转向设备</th>
+                    <th class=" text-center">记录时间</th>
+                    <th class=" text-center">转向设备值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list_datas ">
+                    <td class=" text-center ">{{item.id_num}}</td>
+                    <td class=" text-center">
+                        {{item.name}}
+                    </td>
+                    <td class=" text-center ">{{item.index}}</td>
+                    <td class=" text-center">{{item.itme}}</td>
+                    <td class=" text-center row">
+                        {{item.val}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center row" style="padding: 20px; ">
+            <div class="col-sm-8 text-right">
+                <ul style=" margin: 0; " uib-pagination total-items="bigTotalItems" previous-text="上一页 " next-text="下一页 " first-text="首页 " last-text="尾页 " ng-model="page" ng-change="pageChanged(page) " max-size="maxSize " class="pagination-sm" boundary-links="true" num-pages="numPages"
+                    items-per-page="limit"></ul>
+            </div>
+        </div>
+    </div>
+    </br>
+
+
+</div>

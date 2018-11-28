@@ -1,0 +1,48 @@
+<div class="widgets">
+    <div class="col-md-12" ba-panel ba-panel-title="设置" ba-panel-class="with-scroll">
+        <div ng-if="tpo==2" style="position: absolute;top: 5px;    right: 3%;"><button type="button" ng-click="myopen('app/pages/SetUp/newBasicSettings/newBasicSettings.html', 'lg')" class="btn btn-info btn-raised">添加电子地图位置</button></div>
+        <div style="position: absolute;z-index: 99;left: 130px;top: 7px;">
+            <button type="button" ng-class="{false:'btn btn-default btn-mm',true:'btn btn-success btn-mm'}[tpo==1]" ng-click="myTabs(1)">传感器设备</button>
+            <button style="margin-left: 15px;" type="button" ng-class="{false:'btn btn-default btn-mm',true:'btn btn-success btn-mm'}[tpo==2]" ng-click="myTabs(2)">位置电子地图</button>
+        </div>
+
+        <div ng-if="tpo==1">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr valign="middle  text-center">
+                        <th class="text-center ">传感设备类型</th>
+                        <th class=" text-center">设备单位</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=" text-center ">温度器</td>
+                        <td class=" text-center">℃</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div ng-if="tpo==2">
+            <table class="table table-bordered ">
+                <thead>
+                    <tr valign="middle  text-center">
+                        <th class="text-center ">位置名称</th>
+                        <th class=" text-center">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class=" text-center ">研究所</td>
+                        <td class=" text-center row">
+                            <span class="iscursor" ng-click="myopen('app/pages/SetUp/newBasicSettings/newBasicSettings.html', 'lg')">编辑电子地图</span>
+                            <span class="iscursor" ng-click="que_dekete(item.id,'3')">删除</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+</div>
